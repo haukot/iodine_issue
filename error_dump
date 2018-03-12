@@ -1,0 +1,1094 @@
+## Server log before crash(such error usually do nothing)
+
+
+ Iodine caught an unprotected exception - NotImplementedError: method `call' called on unexpected T_NODE object (0x00000001f31000 flags=0x34491b)
+ No backtrace available.
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ Iodine caught an unprotected exception - NotImplementedError: method `call' called on unexpected T_NODE object (0x00000001f31000 flags=0x34491b)
+ No backtrace available.
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ Iodine caught an unprotected exception - NotImplementedError: method `call' called on unexpected T_NODE object (0x00000001f31000 flags=0x34491b)
+ No backtrace available.
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ Iodine caught an unprotected exception - NotImplementedError: method `call' called on unexpected T_NODE object (0x00000001f31000 flags=0x34491b)
+ No backtrace available.
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ Iodine caught an unprotected exception - NotImplementedError: method `call' called on unexpected T_NODE object (0x00000001f31000 flags=0x34491b)
+ No backtrace available.
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:28 GMT] "GET /cable HTTP/1.1" 101 -- 0ms
+ dima4 connected
+ 127.0.0.1 - - [10/Mar/2018:19:06:31 +0300] "GET / HTTP/1.1" 200 637 0.0076
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:31 GMT] "GET / HTTP/1.1" 200 637 9ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:31 +0300] "GET /reset.css HTTP/1.1" 200 4546 0.0009
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:31 GMT] "GET /reset.css HTTP/1.1" 200 4546 1ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:31 +0300] "GET /app.css HTTP/1.1" 200 2262 0.0008
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:31 GMT] "GET /app.css HTTP/1.1" 200 2262 1ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:31 +0300] "GET /cable.js HTTP/1.1" 200 18162 0.0131
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:31 GMT] "GET /cable.js HTTP/1.1" 200 8192 22ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:33 +0300] "POST /sign_in HTTP/1.1" 303 - 0.0019
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:33 GMT] "POST /sign_in HTTP/1.1" 303 -- 7ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:33 +0300] "GET / HTTP/1.1" 200 631 0.0388
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:33 GMT] "GET / HTTP/1.1" 200 631 39ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:34 +0300] "POST /rooms HTTP/1.1" 303 - 0.0009
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:34 GMT] "POST /rooms HTTP/1.1" 303 -- 1ms
+ 127.0.0.1 - - [10/Mar/2018:19:06:34 +0300] "GET /rooms/hui HTTP/1.1" 200 2390 0.0154
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:34 GMT] "GET /rooms/hui HTTP/1.1" 200 2390 15ms
+ 127.0.0.1 - - [Sat, 9 Mar 2018 16:06:34 GMT] "GET /cable HTTP/1.1" 101 -- 0ms
+ dima connected
+
+
+## Server crashes
+
+ [BUG] Segmentation fault at 0x00000000000000
+ ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+ -- Control frame information -----------------------------------------------
+ c:0001 p:---- s:0002 e:000001 (none) [FINISH]
+ -- Machine register context ------------------------------------------------
+  RIP: 0x00007fd0a0d89510 RBP: 0x0000000000000d01 RSP: 0x00007fd09abab698
+  RAX: 0x0000000000000000 RBX: 0x00007fd08c0c5c90 RCX: 0x0000000000000041
+  RDX: 0x00007fd09abab6a0 RDI: 0x0000000000000000 RSI: 0x0000000000000d01
+   R8: 0x00000000000000d0  R9: 0x0000000000000061 R10: 0x0000000000000062
+  R11: 0x0000000000000000 R12: 0x00007fd09abab6a0 R13: 0x0000000001c29ec0
+  R14: 0x00007fd09abab730 R15: 0x00007fd09abab820 EFL: 0x0000000000010206
+ -- C level backtrace information -------------------------------------------
+ Iodine caught an unprotected exception - NoMethodError: undefined method `call' for "ol":String
+ Did you mean?  caller
+ No backtrace available.
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_vm_bugreport+0x51f) [0x7fd0a0df083f]
+ vm_dump.c:692
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_bug_context+0xd0) [0x7fd0a0c78070] error.c:435
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(sigsegv+0x3e) [0x7fd0a0d5838e] signal.c:890
+ /lib/x86_64-linux-gnu/libc.so.6 [0x7fd0a0866cb0]
+ [0x7fd0a0d89510]
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(method_entry_get_without_cache+0x4c) [0x7fd0a0dd457c] vm_method.c:190
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_call0+0x102) [0x7fd0a0dea202] vm_method.c:831
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so(iodin_rb_call_arg+0x91) [0x7fd09d00c8e1]
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09cff7e0d]
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_protect+0x101) [0x7fd0a0c80d71] eval.c:894
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09d00c9e8]
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_thread_call_with_gvl+0x1d3) [0x7fd0a0dff503] thread.c:1498
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09d00c99d]
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09cfe838d]
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so(defer_perform+0xbc) [0x7fd09cfe955c]
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09cfe9761]
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(rb_thread_call_without_gvl2+0x6d) [0x7fd0a0dff82d] thread.c:1297
+ /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so [0x7fd09cff04f7]
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(thread_start_func_2+0x1f4) [0x7fd0a0dfd894] thread.c:585
+ /home/haukot/.rvm/rubies/ruby-2.3.4/bin/../lib/libruby.so.2.3(thread_start_func_1+0xd0) [0x7fd0a0dfe320] thread_pthread.c:882
+ /lib/x86_64-linux-gnu/libpthread.so.0(start_thread+0xc4) [0x7fd0a061a184] pthread_create.c:312
+ /lib/x86_64-linux-gnu/libc.so.6(clone+0x6d) [0x7fd0a092dffd] ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+ -- Other runtime information -----------------------------------------------
+
+ * Loaded script: /home/haukot/.rvm/gems/ruby-2.3.4/bin/iodine
+
+ * Loaded features:
+
+     0 enumerator.so
+     1 thread.rb
+     2 rational.so
+     3 complex.so
+     4 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+     5 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+     6 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/unicode_normalize.rb
+     7 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/rbconfig.rb
+     8 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/compatibility.rb
+     9 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/defaults.rb
+    10 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/deprecate.rb
+    11 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/errors.rb
+    12 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/version.rb
+    13 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/requirement.rb
+    14 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/platform.rb
+    15 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/basic_specification.rb
+    16 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/stub_specification.rb
+    17 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/util/list.rb
+    18 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/stringio.so
+    19 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/specification.rb
+    20 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/exceptions.rb
+    21 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/dependency.rb
+    22 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_gem.rb
+    23 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/monitor.rb
+    24 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb
+    25 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems.rb
+    26 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/path_support.rb
+    27 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/version.rb
+    28 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/core_ext/name_error.rb
+    29 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/levenshtein.rb
+    30 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/jaro_winkler.rb
+    31 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkable.rb
+    32 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/delegate.rb
+    33 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers/class_name_checker.rb
+    34 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers/variable_name_checker.rb
+    35 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/name_error_checkers.rb
+    36 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/method_name_checker.rb
+    37 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/spell_checkers/null_checker.rb
+    38 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean/formatter.rb
+    39 /home/haukot/.rvm/gems/ruby-2.3.4@global/gems/did_you_mean-1.0.0/lib/did_you_mean.rb
+    40 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/version.rb
+    41 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/compatibility_guard.rb
+    42 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/pathname.so
+    43 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/pathname.rb
+    44 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/constants.rb
+    45 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/util.rb
+    46 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/console.so
+    47 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/user_interaction.rb
+    48 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/etc.so
+    49 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/config_file.rb
+    50 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/rubygems_integration.rb
+    51 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/current_ruby.rb
+    52 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/shared_helpers.rb
+    53 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/fileutils.rb
+    54 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendored_fileutils.rb
+    55 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/errors.rb
+    56 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/environment_preserver.rb
+    57 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/plugin/api.rb
+    58 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/plugin.rb
+    59 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/rfc2396_parser.rb
+    60 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/rfc3986_parser.rb
+    61 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/common.rb
+    62 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/generic.rb
+    63 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/ftp.rb
+    64 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/http.rb
+    65 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/https.rb
+    66 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/ldap.rb
+    67 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/ldaps.rb
+    68 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri/mailto.rb
+    69 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/uri.rb
+    70 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest.so
+    71 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/digest.rb
+    72 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/git.rb
+    73 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/installed.rb
+    74 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/specific_file.rb
+    75 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/local.rb
+    76 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/lock.rb
+    77 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source/vendor.rb
+    78 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/source.rb
+    79 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/gem_helpers.rb
+    80 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/match_platform.rb
+    81 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/rubygems_ext.rb
+    82 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/build_metadata.rb
+    83 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler.rb
+    84 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/settings.rb
+    85 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/ext/builder.rb
+    86 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/feature_flag.rb
+    87 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source.rb
+    88 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source/path.rb
+    89 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source/git.rb
+    90 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source/rubygems.rb
+    91 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/lockfile_parser.rb
+    92 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/set.rb
+    93 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/definition.rb
+    94 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/dependency.rb
+    95 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/ruby_dsl.rb
+    96 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/dsl.rb
+    97 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source_list.rb
+    98 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source/metadata.rb
+    99 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/lazy_specification.rb
+   100 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/index.rb
+   101 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/tsort.rb
+   102 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/forwardable.rb
+   103 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/spec_set.rb
+   104 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/compatibility.rb
+   105 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/gem_metadata.rb
+   106 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/delegates/specification_provider.rb
+   107 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/errors.rb
+   108 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/action.rb
+   109 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/add_edge_no_circular.rb
+   110 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/add_vertex.rb
+   111 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/delete_edge.rb
+   112 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/detach_vertex_named.rb
+   113 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/set_payload.rb
+   114 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/tag.rb
+   115 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/log.rb
+   116 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/vertex.rb
+   117 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/dependency_graph.rb
+   118 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/state.rb
+   119 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/modules/specification_provider.rb
+   120 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/delegates/resolution_state.rb
+   121 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/resolution.rb
+   122 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/resolver.rb
+   123 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo/modules/ui.rb
+   124 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendor/molinillo/lib/molinillo.rb
+   125 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/vendored_molinillo.rb
+   126 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/resolver/spec_group.rb
+   127 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/resolver.rb
+   128 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/gem_version_promoter.rb
+   129 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/source/gemspec.rb
+   130 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/runtime.rb
+   131 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/dep_proxy.rb
+   132 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/ui.rb
+   133 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/ui/silent.rb
+   134 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/ui/rg_proxy.rb
+   135 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/remote_specification.rb
+   136 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/stub_specification.rb
+   137 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/endpoint_specification.rb
+   138 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/ruby_version.rb
+   139 /home/haukot/.rvm/gems/ruby-2.3.4/gems/bundler-1.16.1/lib/bundler/setup.rb
+   140 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/socket.so
+   141 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+   142 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/socket.rb
+   143 /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/version.rb
+   144 /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+   145 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/handler.rb
+   146 /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/rack/handler/iodine.rb
+   147 /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine.rb
+   148 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack.rb
+   149 /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/cli.rb
+   150 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/builder.rb
+   151 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/optparse.rb
+   152 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/server.rb
+   153 /home/haukot/.rvm/gems/ruby-2.3.4/gems/tilt-2.0.8/lib/tilt/dummy.rb
+   154 /home/haukot/.rvm/gems/ruby-2.3.4/gems/tilt-2.0.8/lib/tilt/mapping.rb
+   155 /home/haukot/.rvm/gems/ruby-2.3.4/gems/tilt-2.0.8/lib/tilt/template.rb
+   156 /home/haukot/.rvm/gems/ruby-2.3.4/gems/tilt-2.0.8/lib/tilt.rb
+   157 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/version.rb
+   158 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection.rb
+   159 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/error.rb
+   160 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/simple_match.rb
+   161 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/equality_map.rb
+   162 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/pattern.rb
+   163 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/composite.rb
+   164 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/concat.rb
+   165 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann.rb
+   166 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/node.rb
+   167 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/identity.rb
+   168 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/strscan.so
+   169 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/parser.rb
+   170 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/translator.rb
+   171 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/boundaries.rb
+   172 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/compiler.rb
+   173 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/transformer.rb
+   174 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/validation.rb
+   175 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/template_generator.rb
+   176 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/param_scanner.rb
+   177 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/regexp_based.rb
+   178 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/expander.rb
+   179 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/caster.rb
+   180 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/expander.rb
+   181 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/ast/pattern.rb
+   182 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/sinatra/parser.rb
+   183 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/sinatra/safe_renderer.rb
+   184 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/sinatra/try_convert.rb
+   185 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/sinatra.rb
+   186 /home/haukot/.rvm/gems/ruby-2.3.4/gems/mustermann-1.0.2/lib/mustermann/regular.rb
+   187 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/date_core.so
+   188 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/date.rb
+   189 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/time.rb
+   190 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra/indifferent_hash.rb
+   191 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/ostruct.rb
+   192 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/cgi/escape.so
+   193 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/cgi/util.rb
+   194 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/erb.rb
+   195 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/tmpdir.rb
+   196 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/tempfile.rb
+   197 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/query_parser.rb
+   198 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/utils.rb
+   199 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/media_type.rb
+   200 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/request.rb
+   201 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/show_exceptions.rb
+   202 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra/show_exceptions.rb
+   203 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra/version.rb
+   204 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/body_proxy.rb
+   205 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/response.rb
+   206 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/common_logger.rb
+   207 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/openssl.so
+   208 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/bn.rb
+   209 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/pkey.rb
+   210 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/cipher.rb
+   211 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/config.rb
+   212 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/digest.rb
+   213 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/x509.rb
+   214 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/buffering.rb
+   215 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/nonblock.so
+   216 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl/ssl.rb
+   217 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/openssl.rb
+   218 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/zlib.so
+   219 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/securerandom.rb
+   220 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/session/abstract/id.rb
+   221 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/json/version.rb
+   222 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/json/generic_object.rb
+   223 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/json/common.rb
+   224 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16be.so
+   225 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16le.so
+   226 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32be.so
+   227 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32le.so
+   228 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/parser.so
+   229 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/generator.so
+   230 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/json/ext.rb
+   231 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/json.rb
+   232 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/session/cookie.rb
+   233 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra/base.rb
+   234 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra/main.rb
+   235 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-2.0.1/lib/sinatra.rb
+   236 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/version.rb
+   237 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/require_relative_dir.rb
+   238 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/std_lib.rb
+   239 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/alias_method_chain.rb
+   240 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/std_lib.rb
+   241 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/each_byte.rb
+   242 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/bytes.rb
+   243 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/each_char.rb
+   244 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/chars.rb
+   245 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/make_block_optional.rb
+   246 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/each.rb
+   247 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/each_line.rb
+   248 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/alias_method.rb
+   249 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/getbyte.rb
+   250 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/lines.rb
+   251 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf/readbyte.rb
+   252 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/argf.rb
+   253 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/collect.rb
+   254 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/combination.rb
+   255 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/cycle.rb
+   256 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/delete_if.rb
+   257 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/each.rb
+   258 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/each_index.rb
+   259 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/index.rb
+   260 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/find_index.rb
+   261 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/flatten.rb
+   262 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/map.rb
+   263 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/permutation.rb
+   264 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/pop.rb
+   265 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/product.rb
+   266 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/reject.rb
+   267 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/reverse_each.rb
+   268 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/rindex.rb
+   269 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/select.rb
+   270 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/shift.rb
+   271 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array/shuffle.rb
+   272 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/array.rb
+   273 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/binding/eval.rb
+   274 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/binding.rb
+   275 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/dir/each.rb
+   276 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/dir/foreach.rb
+   277 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/dir.rb
+   278 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/count.rb
+   279 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/cycle.rb
+   280 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/detect.rb
+   281 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/drop.rb
+   282 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/drop_while.rb
+   283 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/each_cons.rb
+   284 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/each_slice.rb
+   285 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/each_with_index.rb
+   286 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/entries.rb
+   287 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/find.rb
+   288 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/find_all.rb
+   289 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/find_index.rb
+   290 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/first.rb
+   291 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/group_by.rb
+   292 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/inject.rb
+   293 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/max_by.rb
+   294 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/min_by.rb
+   295 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/minmax.rb
+   296 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/minmax_by.rb
+   297 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/none.rb
+   298 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/one.rb
+   299 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/partition.rb
+   300 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/reduce.rb
+   301 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/reject.rb
+   302 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/reverse_each.rb
+   303 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/select.rb
+   304 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/sort_by.rb
+   305 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/take.rb
+   306 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/take_while.rb
+   307 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable/to_a.rb
+   308 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerable.rb
+   309 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerator/each.rb
+   310 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerator/next.rb
+   311 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerator/rewind.rb
+   312 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerator/with_index.rb
+   313 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/enumerator.rb
+   314 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/delete_if.rb
+   315 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/each.rb
+   316 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/each_key.rb
+   317 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/each_pair.rb
+   318 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/each_value.rb
+   319 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/reject.rb
+   320 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env/select.rb
+   321 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/env.rb
+   322 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/fixnum/div.rb
+   323 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/fixnum/fdiv.rb
+   324 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/fixnum.rb
+   325 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/float/fdiv.rb
+   326 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/float.rb
+   327 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/gc/stress.rb
+   328 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/gc.rb
+   329 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/constructor.rb
+   330 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/delete_if.rb
+   331 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/each.rb
+   332 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/each_key.rb
+   333 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/each_pair.rb
+   334 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/each_value.rb
+   335 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/hash.rb
+   336 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/eql.rb
+   337 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/reject.rb
+   338 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash/select.rb
+   339 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/hash.rb
+   340 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/downto.rb
+   341 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/even.rb
+   342 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/odd.rb
+   343 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/ord.rb
+   344 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/pred.rb
+   345 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/times.rb
+   346 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer/upto.rb
+   347 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/integer.rb
+   348 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/each_byte.rb
+   349 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/bytes.rb
+   350 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/each_char.rb
+   351 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/chars.rb
+   352 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/each.rb
+   353 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/each_line.rb
+   354 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/foreach.rb
+   355 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/getbyte.rb
+   356 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/lines.rb
+   357 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io/readbyte.rb
+   358 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/io.rb
+   359 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/kernel/__method__.rb
+   360 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/kernel/instance_exec.rb
+   361 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/kernel/tap.rb
+   362 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/kernel.rb
+   363 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/method/name.rb
+   364 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/method.rb
+   365 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/module/module_exec.rb
+   366 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/module/class_exec.rb
+   367 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/module.rb
+   368 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/numeric/step.rb
+   369 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/numeric.rb
+   370 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/object_space/each_object.rb
+   371 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/object_space.rb
+   372 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/process/exec.rb
+   373 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/process.rb
+   374 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/range/each.rb
+   375 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/range/step.rb
+   376 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/range.rb
+   377 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/regexp/union.rb
+   378 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/regexp.rb
+   379 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/stdlib/tmpdir.rb
+   380 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/stdlib.rb
+   381 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/stop_iteration.rb
+   382 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/each_byte.rb
+   383 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/bytes.rb
+   384 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/bytesize.rb
+   385 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/each.rb
+   386 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/each_char.rb
+   387 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/each_line.rb
+   388 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/end_with.rb
+   389 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/lines.rb
+   390 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/partition.rb
+   391 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/rpartition.rb
+   392 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/start_with.rb
+   393 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string/upto.rb
+   394 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/string.rb
+   395 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/struct/each.rb
+   396 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/struct/each_pair.rb
+   397 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/struct.rb
+   398 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/symbol/to_proc.rb
+   399 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7/symbol.rb
+   400 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.7.rb
+   401 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.8.rb
+   402 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/array/sample.rb
+   403 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/array/try_convert.rb
+   404 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/array.rb
+   405 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/dir/to_path.rb
+   406 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/dir.rb
+   407 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerable/each_with_index.rb
+   408 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerable/each_with_object.rb
+   409 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerable.rb
+   410 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerator/new.rb
+   411 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerator/with_object.rb
+   412 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/enumerator.rb
+   413 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/env/key.rb
+   414 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/env.rb
+   415 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/atime.rb
+   416 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/basename.rb
+   417 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/binary.rb
+   418 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/blockdev.rb
+   419 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/chardev.rb
+   420 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/chmod.rb
+   421 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/chown.rb
+   422 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/ctime.rb
+   423 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/delete.rb
+   424 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/directory.rb
+   425 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/dirname.rb
+   426 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/executable.rb
+   427 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/executable_real.rb
+   428 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/exist.rb
+   429 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/exists.rb
+   430 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/expand_path.rb
+   431 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/extname.rb
+   432 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/file.rb
+   433 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/ftype.rb
+   434 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/grpowned.rb
+   435 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/join.rb
+   436 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/lchmod.rb
+   437 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/lchown.rb
+   438 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/link.rb
+   439 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/lstat.rb
+   440 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/mtime.rb
+   441 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/new.rb
+   442 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/open.rb
+   443 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/owned.rb
+   444 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/pipe.rb
+   445 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/readable.rb
+   446 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/readable_real.rb
+   447 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/readlink.rb
+   448 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/rename.rb
+   449 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/setgid.rb
+   450 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/setuid.rb
+   451 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/size.rb
+   452 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/socket.rb
+   453 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/split.rb
+   454 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/stat.rb
+   455 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/sticky.rb
+   456 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/symlink.rb
+   457 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/to_path.rb
+   458 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/truncate.rb
+   459 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/unlink.rb
+   460 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/writable.rb
+   461 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/writable_real.rb
+   462 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file/zero.rb
+   463 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/file.rb
+   464 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/float/round.rb
+   465 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/float.rb
+   466 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash/assoc.rb
+   467 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash/default_proc.rb
+   468 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash/key.rb
+   469 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash/rassoc.rb
+   470 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash/try_convert.rb
+   471 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/hash.rb
+   472 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/integer/magnitude.rb
+   473 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/integer/round.rb
+   474 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/integer.rb
+   475 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/io/binread.rb
+   476 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/io/open.rb
+   477 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/io/try_convert.rb
+   478 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/io/ungetbyte.rb
+   479 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/io.rb
+   480 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel/__callee__.rb
+   481 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel/define_singleton_method.rb
+   482 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel/public_method.rb
+   483 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel/public_send.rb
+   484 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel/require_relative.rb
+   485 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/kernel.rb
+   486 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/math/log.rb
+   487 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/math/log2.rb
+   488 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/math.rb
+   489 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/numeric/round.rb
+   490 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/numeric.rb
+   491 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/proc/case_compare.rb
+   492 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/proc/curry.rb
+   493 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/proc/lambda.rb
+   494 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/proc/yield.rb
+   495 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/proc.rb
+   496 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/range/cover.rb
+   497 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/range.rb
+   498 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/regexp/try_convert.rb
+   499 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/regexp.rb
+   500 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/stdlib.rb
+   501 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/ascii_only.rb
+   502 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/chr.rb
+   503 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/clear.rb
+   504 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/codepoints.rb
+   505 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/each_codepoint.rb
+   506 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/getbyte.rb
+   507 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/ord.rb
+   508 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/setbyte.rb
+   509 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string/try_convert.rb
+   510 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/string.rb
+   511 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/capitalize.rb
+   512 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/casecmp.rb
+   513 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/comparable.rb
+   514 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/comparison.rb
+   515 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/downcase.rb
+   516 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/element_reference.rb
+   517 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/empty.rb
+   518 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/length.rb
+   519 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/match.rb
+   520 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/succ.rb
+   521 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/next.rb
+   522 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/size.rb
+   523 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/swapcase.rb
+   524 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol/upcase.rb
+   525 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1/symbol.rb
+   526 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.1.rb
+   527 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/keep_if.rb
+   528 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/product.rb
+   529 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/repeated_combination.rb
+   530 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/repeated_permutation.rb
+   531 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/rotate.rb
+   532 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/select.rb
+   533 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/sort_by.rb
+   534 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array/uniq.rb
+   535 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/array.rb
+   536 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/complex/to_r.rb
+   537 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/complex.rb
+   538 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/dir/home.rb
+   539 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/dir.rb
+   540 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable/chunk.rb
+   541 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable/flat_map.rb
+   542 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable/collect_concat.rb
+   543 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable/each_entry.rb
+   544 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable/slice_before.rb
+   545 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/enumerable.rb
+   546 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/float/infinity.rb
+   547 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/float/nan.rb
+   548 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/float.rb
+   549 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/hash/keep_if.rb
+   550 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/hash/select.rb
+   551 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/hash.rb
+   552 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/kernel/singleton_class.rb
+   553 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/kernel.rb
+   554 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/random.rb
+   555 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/stdlib/set.rb
+   556 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2/stdlib.rb
+   557 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.2.rb
+   558 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/file/null.rb
+   559 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/file.rb
+   560 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/io/advise.rb
+   561 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/io/binwrite.rb
+   562 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/io/write.rb
+   563 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/io.rb
+   564 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/string/byteslice.rb
+   565 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/string/prepend.rb
+   566 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3/string.rb
+   567 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.3.rb
+   568 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/1.9.rb
+   569 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/array/bsearch.rb
+   570 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/array.rb
+   571 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/enumerable/lazy.rb
+   572 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/enumerable.rb
+   573 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/enumerator/lazy.rb
+   574 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/enumerator.rb
+   575 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/env/to_h.rb
+   576 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/env.rb
+   577 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/hash/default_proc.rb
+   578 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/hash/to_h.rb
+   579 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/hash.rb
+   580 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/nil/to_h.rb
+   581 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/nil.rb
+   582 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/range/bsearch.rb
+   583 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/range/size.rb
+   584 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/range.rb
+   585 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/stdlib/ostruct.rb
+   586 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/stdlib.rb
+   587 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/struct/to_h.rb
+   588 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0/struct.rb
+   589 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.0.rb
+   590 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.0.rb
+   591 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/enumerable/to_h.rb
+   592 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/array/to_h.rb
+   593 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/array.rb
+   594 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/bignum/bit_length.rb
+   595 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/bignum.rb
+   596 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/enumerable.rb
+   597 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/fixnum/bit_length.rb
+   598 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/fixnum.rb
+   599 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/module/include.rb
+   600 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0/module.rb
+   601 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.0.rb
+   602 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.1.rb
+   603 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/enumerable/slice_after.rb
+   604 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/enumerable/slice_when.rb
+   605 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/enumerable.rb
+   606 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/float/next_float.rb
+   607 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/float/prev_float.rb
+   608 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/float.rb
+   609 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/kernel/itself.rb
+   610 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/kernel.rb
+   611 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/method/curry.rb
+   612 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/method/super_method.rb
+   613 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/method.rb
+   614 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/string/unicode_normalize.rb
+   615 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0/string.rb
+   616 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.0.rb
+   617 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.2.rb
+   618 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/array/bsearch_index.rb
+   619 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/array/dig.rb
+   620 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/array.rb
+   621 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/enumerable/chunk_while.rb
+   622 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/enumerable/grep_v.rb
+   623 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/enumerable.rb
+   624 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/dig.rb
+   625 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/fetch_values.rb
+   626 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/gt.rb
+   627 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/gte.rb
+   628 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/lt.rb
+   629 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/lte.rb
+   630 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash/to_proc.rb
+   631 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/hash.rb
+   632 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/numeric/negative.rb
+   633 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/numeric/positive.rb
+   634 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/numeric.rb
+   635 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/struct/dig.rb
+   636 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0/struct.rb
+   637 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.0.rb
+   638 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.3.rb
+   639 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/tools/arguments.rb
+   640 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/comparable/clamp.rb
+   641 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/comparable.rb
+   642 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/enumerable/sum.rb
+   643 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/enumerable/uniq.rb
+   644 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/enumerable.rb
+   645 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/false_class/dup.rb
+   646 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/false_class.rb
+   647 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/fixnum/dup.rb
+   648 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/fixnum.rb
+   649 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/float/dup.rb
+   650 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/float.rb
+   651 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/hash/compact.rb
+   652 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/hash/transform_values.rb
+   653 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/hash.rb
+   654 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/nil_class/dup.rb
+   655 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/nil_class.rb
+   656 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/regexp/match.rb
+   657 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/regexp.rb
+   658 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/string/match.rb
+   659 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/string.rb
+   660 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/true_class/dup.rb
+   661 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0/true_class.rb
+   662 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.0.rb
+   663 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/2.4.rb
+   664 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/array.rb
+   665 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/enumerable.rb
+   666 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/hash.rb
+   667 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/kernel.rb
+   668 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/module.rb
+   669 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails/string.rb
+   670 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports/rails.rb
+   671 /home/haukot/.rvm/gems/ruby-2.3.4/gems/backports-3.11.1/lib/backports.rb
+   672 /home/haukot/.rvm/gems/ruby-2.3.4/gems/sinatra-contrib-2.0.1/lib/sinatra/cookies.rb
+   673 /home/haukot/temp/litecable/examples/sinatra/app.rb
+   674 /home/haukot/temp/litecable/lib/lite_cable/version.rb
+   675 /home/haukot/temp/litecable/lib/lite_cable/internal.rb
+   676 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/logger.rb
+   677 /home/haukot/temp/litecable/lib/lite_cable/logging.rb
+   678 /home/haukot/temp/litecable/lib/lite_cable/connection/authorization.rb
+   679 /home/haukot/temp/litecable/lib/lite_cable/connection/identification.rb
+   680 /home/haukot/temp/litecable/lib/lite_cable/connection/base.rb
+   681 /home/haukot/temp/litecable/lib/lite_cable/connection/streams.rb
+   682 /home/haukot/temp/litecable/lib/lite_cable/connection/subscriptions.rb
+   683 /home/haukot/temp/litecable/lib/lite_cable/connection.rb
+   684 /home/haukot/temp/litecable/lib/lite_cable/channel/registry.rb
+   685 /home/haukot/temp/litecable/lib/lite_cable/channel/streams.rb
+   686 /home/haukot/temp/litecable/lib/lite_cable/channel/base.rb
+   687 /home/haukot/temp/litecable/lib/lite_cable/channel.rb
+   688 /home/haukot/temp/litecable/lib/lite_cable/coders/raw.rb
+   689 /home/haukot/temp/litecable/lib/lite_cable/coders/json.rb
+   690 /home/haukot/temp/litecable/lib/lite_cable/coders.rb
+   691 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/version.rb
+   692 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/ext/deep_dup.rb
+   693 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/ext/deep_freeze.rb
+   694 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/ext/hash.rb
+   695 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/config.rb
+   696 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway/env.rb
+   697 /home/haukot/.rvm/gems/ruby-2.3.4/gems/anyway_config-1.2.0/lib/anyway.rb
+   698 /home/haukot/temp/litecable/lib/lite_cable/config.rb
+   699 /home/haukot/temp/litecable/lib/lite_cable/anycable.rb
+   700 /home/haukot/.rvm/gems/ruby-2.3.4/gems/websocket-1.2.5/lib/websocket.rb
+   701 /home/haukot/temp/litecable/lib/lite_cable/server/subscribers_map.rb
+   702 /home/haukot/temp/litecable/lib/lite_cable/server/client_socket/subscriptions.rb
+   703 /home/haukot/temp/litecable/lib/lite_cable/server/client_socket/base.rb
+   704 /home/haukot/temp/litecable/lib/lite_cable/server/client_socket.rb
+   705 /home/haukot/temp/litecable/lib/lite_cable/server/heart_beat.rb
+   706 /home/haukot/temp/litecable/lib/lite_cable/server/middleware.rb
+   707 /home/haukot/temp/litecable/lib/lite_cable/server.rb
+   708 /home/haukot/temp/litecable/lib/lite_cable/iodine.rb
+   709 /home/haukot/temp/litecable/lib/lite_cable.rb
+   710 /home/haukot/temp/litecable/lib/litecable.rb
+   711 /home/haukot/temp/litecable/examples/sinatra/chat.rb
+   712 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/urlmap.rb
+   713 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/method_override.rb
+   714 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/head.rb
+   715 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/logger.rb
+   716 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest/sha1.so
+   717 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/base.rb
+   718 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/frame_options.rb
+   719 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/http_origin.rb
+   720 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/ip_spoofing.rb
+   721 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/json_csrf.rb
+   722 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/path_traversal.rb
+   723 /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/base64.rb
+   724 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/authenticity_token.rb
+   725 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/remote_token.rb
+   726 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/session_hijacking.rb
+   727 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-protection-2.0.1/lib/rack/protection/xss_header.rb
+   728 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/version.rb
+   729 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple.rb
+   730 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/utils.rb
+   731 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/mixins/options.rb
+   732 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/parser.rb
+   733 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/map.rb
+   734 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/parser.rb
+   735 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/mixins/dispatcher.rb
+   736 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filter.rb
+   737 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/dispatcher.rb
+   738 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/filter.rb
+   739 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/filter.rb
+   740 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/do_inserter.rb
+   741 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/end_inserter.rb
+   742 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/embedded.rb
+   743 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/interpolation.rb
+   744 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/controls.rb
+   745 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/splat/filter.rb
+   746 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/splat/builder.rb
+   747 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/code_attributes.rb
+   748 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/mixins/engine_dsl.rb
+   749 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/engine.rb
+   750 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/generator.rb
+   751 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/generators/array.rb
+   752 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/generators/array_buffer.rb
+   753 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/generators/string_buffer.rb
+   754 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/encoding.rb
+   755 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/remove_bom.rb
+   756 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/attribute_sorter.rb
+   757 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/attribute_merger.rb
+   758 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/fast.rb
+   759 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/pretty.rb
+   760 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/escapable.rb
+   761 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/control_flow.rb
+   762 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/multi_flattener.rb
+   763 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/filters/static_merger.rb
+   764 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/engine.rb
+   765 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/templates.rb
+   766 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/mixins/template.rb
+   767 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/templates/tilt.rb
+   768 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/template.rb
+   769 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim/version.rb
+   770 /home/haukot/.rvm/gems/ruby-2.3.4/gems/slim-3.0.9/lib/slim.rb
+   771 /home/haukot/.rvm/gems/ruby-2.3.4/gems/temple-0.8.0/lib/temple/html/attribute_remover.rb
+   772 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/mime.rb
+   773 /home/haukot/.rvm/gems/ruby-2.3.4/gems/rack-2.0.4/lib/rack/file.rb
+
+ * Process memory map:
+
+ 00400000-00401000 r-xp 00000000 08:08 4211904                            /home/haukot/.rvm/rubies/ruby-2.3.4/bin/ruby
+ 00600000-00601000 r--p 00000000 08:08 4211904                            /home/haukot/.rvm/rubies/ruby-2.3.4/bin/ruby
+ 00601000-00602000 rw-p 00001000 08:08 4211904                            /home/haukot/.rvm/rubies/ruby-2.3.4/bin/ruby
+ 0114c000-02517000 rw-p 00000000 00:00 0                                  [heap]
+ 02517000-02539000 rw-p 00000000 00:00 0                                  [heap]
+ 7fd070000000-7fd070021000 rw-p 00000000 00:00 0
+ 7fd070021000-7fd074000000 ---p 00000000 00:00 0
+ 7fd078000000-7fd078021000 rw-p 00000000 00:00 0
+ 7fd078021000-7fd07c000000 ---p 00000000 00:00 0
+ 7fd07c000000-7fd07c021000 rw-p 00000000 00:00 0
+ 7fd07c021000-7fd080000000 ---p 00000000 00:00 0
+ 7fd080000000-7fd080021000 rw-p 00000000 00:00 0
+ 7fd080021000-7fd084000000 ---p 00000000 00:00 0
+ 7fd084000000-7fd084021000 rw-p 00000000 00:00 0
+ 7fd084021000-7fd088000000 ---p 00000000 00:00 0
+ 7fd088000000-7fd088021000 rw-p 00000000 00:00 0
+ 7fd088021000-7fd08c000000 ---p 00000000 00:00 0
+ 7fd08c000000-7fd08c296000 rw-p 00000000 00:00 0
+ 7fd08c296000-7fd090000000 ---p 00000000 00:00 0
+ 7fd0926a8000-7fd0926a9000 ---p 00000000 00:00 0
+ 7fd0926a9000-7fd0928aa000 rw-p 00000000 00:00 0                          [stack:19363]
+ 7fd09377c000-7fd094000000 r--s 00000000 08:08 264196                     /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd094000000-7fd094021000 rw-p 00000000 00:00 0
+ 7fd094021000-7fd098000000 ---p 00000000 00:00 0
+ 7fd09844d000-7fd0984c3000 r--s 00000000 08:08 4211416                    /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+ 7fd0984c3000-7fd098689000 r--s 00000000 08:08 3026669                    /lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd098689000-7fd099489000 r--s 00000000 08:08 4209678                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/libruby.so.2.3.0
+ 7fd099489000-7fd09949f000 r-xp 00000000 08:08 3018761                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7fd09949f000-7fd09969e000 ---p 00016000 08:08 3018761                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7fd09969e000-7fd09969f000 rw-p 00015000 08:08 3018761                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7fd09969f000-7fd0996a0000 r-xp 00000000 08:08 4210400                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest/sha1.so
+ 7fd0996a0000-7fd09989f000 ---p 00001000 08:08 4210400                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest/sha1.so
+ 7fd09989f000-7fd0998a0000 r--p 00000000 08:08 4210400                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest/sha1.so
+ 7fd0998a0000-7fd0998a1000 rw-p 00001000 08:08 4210400                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest/sha1.so
+ 7fd0998a1000-7fd0998a2000 ---p 00000000 00:00 0
+ 7fd0998a2000-7fd099aa3000 rw-p 00000000 00:00 0                          [stack:19368]
+ 7fd099aa3000-7fd099aa4000 ---p 00000000 00:00 0
+ 7fd099aa4000-7fd099ca5000 rw-p 00000000 00:00 0                          [stack:19367]
+ 7fd099ca5000-7fd099ca6000 ---p 00000000 00:00 0
+ 7fd099ca6000-7fd099ea7000 rw-p 00000000 00:00 0                          [stack:19366]
+ 7fd099ea7000-7fd099ea8000 ---p 00000000 00:00 0
+ 7fd099ea8000-7fd09a6a8000 rw-p 00000000 00:00 0                          [stack:19365]
+ 7fd09a6a8000-7fd09a6a9000 ---p 00000000 00:00 0
+ 7fd09a6a9000-7fd09a8aa000 rw-p 00000000 00:00 0                          [stack:19364]
+ 7fd09a8aa000-7fd09a8ab000 ---p 00000000 00:00 0
+ 7fd09a8ab000-7fd09aaac000 rw-p 00000000 00:00 0                          [stack:19353]
+ 7fd09aaac000-7fd09aaad000 ---p 00000000 00:00 0
+ 7fd09aaad000-7fd09acae000 rw-p 00000000 00:00 0
+ 7fd09acae000-7fd09acaf000 ---p 00000000 00:00 0
+ 7fd09acaf000-7fd09aeb0000 rw-p 00000000 00:00 0                          [stack:19350]
+ 7fd09aeb0000-7fd09aeba000 r-xp 00000000 08:08 4210494                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/generator.so
+ 7fd09aeba000-7fd09b0b9000 ---p 0000a000 08:08 4210494                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/generator.so
+ 7fd09b0b9000-7fd09b0ba000 r--p 00009000 08:08 4210494                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/generator.so
+ 7fd09b0ba000-7fd09b0bb000 rw-p 0000a000 08:08 4210494                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/generator.so
+ 7fd09b0bb000-7fd09b0bc000 r-xp 00000000 08:08 4210447                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32le.so
+ 7fd09b0bc000-7fd09b2bc000 ---p 00001000 08:08 4210447                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32le.so
+ 7fd09b2bc000-7fd09b2bd000 r--p 00001000 08:08 4210447                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32le.so
+ 7fd09b2bd000-7fd09b2be000 rw-p 00002000 08:08 4210447                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32le.so
+ 7fd09b2be000-7fd09b2bf000 r-xp 00000000 08:08 4210474                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32be.so
+ 7fd09b2bf000-7fd09b4bf000 ---p 00001000 08:08 4210474                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32be.so
+ 7fd09b4bf000-7fd09b4c0000 r--p 00001000 08:08 4210474                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32be.so
+ 7fd09b4c0000-7fd09b4c1000 rw-p 00002000 08:08 4210474                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_32be.so
+ 7fd09b4c1000-7fd09b4c2000 r-xp 00000000 08:08 4210457                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16le.so
+ 7fd09b4c2000-7fd09b6c2000 ---p 00001000 08:08 4210457                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16le.so
+ 7fd09b6c2000-7fd09b6c3000 r--p 00001000 08:08 4210457                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16le.so
+ 7fd09b6c3000-7fd09b6c4000 rw-p 00002000 08:08 4210457                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16le.so
+ 7fd09b6c4000-7fd09b6c5000 r-xp 00000000 08:08 4210453                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16be.so
+ 7fd09b6c5000-7fd09b8c5000 ---p 00001000 08:08 4210453                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16be.so
+ 7fd09b8c5000-7fd09b8c6000 r--p 00001000 08:08 4210453                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16be.so
+ 7fd09b8c6000-7fd09b8c7000 rw-p 00002000 08:08 4210453                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/utf_16be.so
+ 7fd09b8c7000-7fd09b8cd000 r-xp 00000000 08:08 4210495                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/parser.so
+ 7fd09b8cd000-7fd09bacc000 ---p 00006000 08:08 4210495                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/parser.so
+ 7fd09bacc000-7fd09bacd000 r--p 00005000 08:08 4210495                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/parser.so
+ 7fd09bacd000-7fd09bace000 rw-p 00006000 08:08 4210495                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/json/ext/parser.so
+ 7fd09bace000-7fd09bae6000 r-xp 00000000 08:08 3018913                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+ 7fd09bae6000-7fd09bce5000 ---p 00018000 08:08 3018913                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+ 7fd09bce5000-7fd09bce6000 r--p 00017000 08:08 3018913                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+ 7fd09bce6000-7fd09bce7000 rw-p 00018000 08:08 3018913                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+ 7fd09bce7000-7fd09bcf7000 r-xp 00000000 08:08 4210483                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/zlib.so
+ 7fd09bcf7000-7fd09bef6000 ---p 00010000 08:08 4210483                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/zlib.so
+ 7fd09bef6000-7fd09bef7000 r--p 0000f000 08:08 4210483                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/zlib.so
+ 7fd09bef7000-7fd09bef8000 rw-p 00010000 08:08 4210483                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/zlib.so
+ 7fd09bef8000-7fd09bef9000 r-xp 00000000 08:08 4210420                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/nonblock.so
+ 7fd09bef9000-7fd09c0f9000 ---p 00001000 08:08 4210420                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/nonblock.so
+ 7fd09c0f9000-7fd09c0fa000 r--p 00001000 08:08 4210420                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/nonblock.so
+ 7fd09c0fa000-7fd09c0fb000 rw-p 00002000 08:08 4210420                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/nonblock.so
+ 7fd09c0fb000-7fd09c2ae000 r-xp 00000000 08:08 3021812                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+ 7fd09c2ae000-7fd09c4ad000 ---p 001b3000 08:08 3021812                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+ 7fd09c4ad000-7fd09c4c8000 r--p 001b2000 08:08 3021812                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+ 7fd09c4c8000-7fd09c4d3000 rw-p 001cd000 08:08 3021812                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+ 7fd09c4d3000-7fd09c4d7000 rw-p 00000000 00:00 0
+ 7fd09c4d7000-7fd09c52c000 r-xp 00000000 08:08 3018879                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+ 7fd09c52c000-7fd09c72c000 ---p 00055000 08:08 3018879                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+ 7fd09c72c000-7fd09c72f000 r--p 00055000 08:08 3018879                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+ 7fd09c72f000-7fd09c736000 rw-p 00058000 08:08 3018879                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+ 7fd09c736000-7fd09c788000 r-xp 00000000 08:08 4210405                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/openssl.so
+ 7fd09c788000-7fd09c987000 ---p 00052000 08:08 4210405                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/openssl.so
+ 7fd09c987000-7fd09c989000 r--p 00051000 08:08 4210405                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/openssl.so
+ 7fd09c989000-7fd09c98b000 rw-p 00053000 08:08 4210405                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/openssl.so
+ 7fd09c98b000-7fd09c98c000 rw-p 00000000 00:00 0
+ 7fd09c98c000-7fd09c98d000 r-xp 00000000 08:08 4210410                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/cgi/escape.so
+ 7fd09c98d000-7fd09cb8d000 ---p 00001000 08:08 4210410                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/cgi/escape.so
+ 7fd09cb8d000-7fd09cb8e000 r--p 00001000 08:08 4210410                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/cgi/escape.so
+ 7fd09cb8e000-7fd09cb8f000 rw-p 00002000 08:08 4210410                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/cgi/escape.so
+ 7fd09cb8f000-7fd09cbc5000 r-xp 00000000 08:08 4210488                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/date_core.so
+ 7fd09cbc5000-7fd09cdc5000 ---p 00036000 08:08 4210488                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/date_core.so
+ 7fd09cdc5000-7fd09cdc6000 r--p 00036000 08:08 4210488                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/date_core.so
+ 7fd09cdc6000-7fd09cdc7000 rw-p 00037000 08:08 4210488                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/date_core.so
+ 7fd09cdc7000-7fd09cdc9000 rw-p 00000000 00:00 0
+ 7fd09cdc9000-7fd09cdcf000 r-xp 00000000 08:08 4210424                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/strscan.so
+ 7fd09cdcf000-7fd09cfce000 ---p 00006000 08:08 4210424                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/strscan.so
+ 7fd09cfce000-7fd09cfcf000 r--p 00005000 08:08 4210424                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/strscan.so
+ 7fd09cfcf000-7fd09cfd0000 rw-p 00006000 08:08 4210424                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/strscan.so
+ 7fd09cfd0000-7fd09d022000 r-xp 00000000 08:08 4211416                    /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+ 7fd09d022000-7fd09d221000 ---p 00052000 08:08 4211416                    /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+ 7fd09d221000-7fd09d222000 r--p 00051000 08:08 4211416                    /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+ 7fd09d222000-7fd09d239000 rw-p 00052000 08:08 4211416                    /home/haukot/.rvm/gems/ruby-2.3.4/gems/iodine-0.4.17/lib/iodine/iodine.so
+ 7fd09d239000-7fd09e462000 rw-p 00000000 00:00 0
+ 7fd09e462000-7fd09e463000 r-xp 00000000 08:08 4210419                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+ 7fd09e463000-7fd09e663000 ---p 00001000 08:08 4210419                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+ 7fd09e663000-7fd09e664000 r--p 00001000 08:08 4210419                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+ 7fd09e664000-7fd09e665000 rw-p 00002000 08:08 4210419                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/wait.so
+ 7fd09e665000-7fd09e690000 r-xp 00000000 08:08 4210411                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/socket.so
+ 7fd09e690000-7fd09e88f000 ---p 0002b000 08:08 4210411                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/socket.so
+ 7fd09e88f000-7fd09e890000 r--p 0002a000 08:08 4210411                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/socket.so
+ 7fd09e890000-7fd09e891000 rw-p 0002b000 08:08 4210411                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/socket.so
+ 7fd09e891000-7fd09e895000 r-xp 00000000 08:08 4210408                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest.so
+ 7fd09e895000-7fd09ea94000 ---p 00004000 08:08 4210408                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest.so
+ 7fd09ea94000-7fd09ea95000 r--p 00003000 08:08 4210408                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest.so
+ 7fd09ea95000-7fd09ea96000 rw-p 00004000 08:08 4210408                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/digest.so
+ 7fd09ea96000-7fd09ea9c000 r-xp 00000000 08:08 4210486                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/etc.so
+ 7fd09ea9c000-7fd09ec9b000 ---p 00006000 08:08 4210486                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/etc.so
+ 7fd09ec9b000-7fd09ec9c000 r--p 00005000 08:08 4210486                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/etc.so
+ 7fd09ec9c000-7fd09ec9d000 rw-p 00006000 08:08 4210486                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/etc.so
+ 7fd09ec9d000-7fd09eca2000 r-xp 00000000 08:08 4210418                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/console.so
+ 7fd09eca2000-7fd09eea1000 ---p 00005000 08:08 4210418                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/console.so
+ 7fd09eea1000-7fd09eea2000 r--p 00004000 08:08 4210418                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/console.so
+ 7fd09eea2000-7fd09eea3000 rw-p 00005000 08:08 4210418                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/io/console.so
+ 7fd09eea3000-7fd09eeaa000 r-xp 00000000 08:08 4210409                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/pathname.so
+ 7fd09eeaa000-7fd09f0a9000 ---p 00007000 08:08 4210409                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/pathname.so
+ 7fd09f0a9000-7fd09f0aa000 r--p 00006000 08:08 4210409                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/pathname.so
+ 7fd09f0aa000-7fd09f0ab000 rw-p 00007000 08:08 4210409                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/pathname.so
+ 7fd09f0ab000-7fd09f0b3000 r-xp 00000000 08:08 4210416                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/stringio.so
+ 7fd09f0b3000-7fd09f2b2000 ---p 00008000 08:08 4210416                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/stringio.so
+ 7fd09f2b2000-7fd09f2b3000 r--p 00007000 08:08 4210416                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/stringio.so
+ 7fd09f2b3000-7fd09f2b4000 rw-p 00008000 08:08 4210416                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/stringio.so
+ 7fd09f2b4000-7fd09f2b7000 r-xp 00000000 08:08 4210434                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+ 7fd09f2b7000-7fd09f4b6000 ---p 00003000 08:08 4210434                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+ 7fd09f4b6000-7fd09f4b7000 r--p 00002000 08:08 4210434                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+ 7fd09f4b7000-7fd09f4b8000 rw-p 00003000 08:08 4210434                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/trans/transdb.so
+ 7fd09f4b8000-7fd09f4ba000 r-xp 00000000 08:08 4210478                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+ 7fd09f4ba000-7fd09f6b9000 ---p 00002000 08:08 4210478                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+ 7fd09f6b9000-7fd09f6ba000 r--p 00001000 08:08 4210478                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+ 7fd09f6ba000-7fd09f6bb000 rw-p 00002000 08:08 4210478                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/x86_64-linux/enc/encdb.so
+ 7fd09f6bb000-7fd09fecf000 r--p 00000000 08:08 270013                     /usr/lib/locale/locale-archive
+ 7fd09fecf000-7fd09ffd4000 r-xp 00000000 08:08 3026666                    /lib/x86_64-linux-gnu/libm-2.19.so
+ 7fd09ffd4000-7fd0a01d3000 ---p 00105000 08:08 3026666                    /lib/x86_64-linux-gnu/libm-2.19.so
+ 7fd0a01d3000-7fd0a01d4000 r--p 00104000 08:08 3026666                    /lib/x86_64-linux-gnu/libm-2.19.so
+ 7fd0a01d4000-7fd0a01d5000 rw-p 00105000 08:08 3026666                    /lib/x86_64-linux-gnu/libm-2.19.so
+ 7fd0a01d5000-7fd0a01de000 r-xp 00000000 08:08 3026678                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+ 7fd0a01de000-7fd0a03de000 ---p 00009000 08:08 3026678                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+ 7fd0a03de000-7fd0a03df000 r--p 00009000 08:08 3026678                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+ 7fd0a03df000-7fd0a03e0000 rw-p 0000a000 08:08 3026678                    /lib/x86_64-linux-gnu/libcrypt-2.19.so
+ 7fd0a03e0000-7fd0a040e000 rw-p 00000000 00:00 0
+ 7fd0a040e000-7fd0a0411000 r-xp 00000000 08:08 3026674                    /lib/x86_64-linux-gnu/libdl-2.19.so
+ 7fd0a0411000-7fd0a0610000 ---p 00003000 08:08 3026674                    /lib/x86_64-linux-gnu/libdl-2.19.so
+ 7fd0a0610000-7fd0a0611000 r--p 00002000 08:08 3026674                    /lib/x86_64-linux-gnu/libdl-2.19.so
+ 7fd0a0611000-7fd0a0612000 rw-p 00003000 08:08 3026674                    /lib/x86_64-linux-gnu/libdl-2.19.so
+ 7fd0a0612000-7fd0a062b000 r-xp 00000000 08:08 3026670                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+ 7fd0a062b000-7fd0a082a000 ---p 00019000 08:08 3026670                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+ 7fd0a082a000-7fd0a082b000 r--p 00018000 08:08 3026670                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+ 7fd0a082b000-7fd0a082c000 rw-p 00019000 08:08 3026670                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+ 7fd0a082c000-7fd0a0830000 rw-p 00000000 00:00 0
+ 7fd0a0830000-7fd0a09ee000 r-xp 00000000 08:08 3026669                    /lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd0a09ee000-7fd0a0bee000 ---p 001be000 08:08 3026669                    /lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd0a0bee000-7fd0a0bf2000 r--p 001be000 08:08 3026669                    /lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd0a0bf2000-7fd0a0bf4000 rw-p 001c2000 08:08 3026669                    /lib/x86_64-linux-gnu/libc-2.19.so
+ 7fd0a0bf4000-7fd0a0bf9000 rw-p 00000000 00:00 0
+ 7fd0a0bf9000-7fd0a0ed7000 r-xp 00000000 08:08 4209678                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/libruby.so.2.3.0
+ 7fd0a0ed7000-7fd0a10d6000 ---p 002de000 08:08 4209678                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/libruby.so.2.3.0
+ 7fd0a10d6000-7fd0a10dc000 r--p 002dd000 08:08 4209678                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/libruby.so.2.3.0
+ 7fd0a10dc000-7fd0a10df000 rw-p 002e3000 08:08 4209678                    /home/haukot/.rvm/rubies/ruby-2.3.4/lib/libruby.so.2.3.0
+ 7fd0a10df000-7fd0a10f1000 rw-p 00000000 00:00 0
+ 7fd0a10f1000-7fd0a1114000 r-xp 00000000 08:08 3026682                    /lib/x86_64-linux-gnu/ld-2.19.so
+ 7fd0a1154000-7fd0a1177000 r--s 00000000 08:08 3026670                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+ 7fd0a1177000-7fd0a119a000 r--s 00000000 08:08 4211904                    /home/haukot/.rvm/rubies/ruby-2.3.4/bin/ruby
+ 7fd0a119a000-7fd0a12e1000 rw-p 00000000 00:00 0
+ 7fd0a12ec000-7fd0a12ed000 rw-p 00000000 00:00 0
+ 7fd0a12ed000-7fd0a1306000 rwxp 00000000 00:00 0
+ 7fd0a1306000-7fd0a130d000 r--s 00000000 08:08 636253                     /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+ 7fd0a130d000-7fd0a130e000 ---p 00000000 00:00 0
+ 7fd0a130e000-7fd0a1313000 rw-p 00000000 00:00 0                          [stack:19343]
+ 7fd0a1313000-7fd0a1314000 r--p 00022000 08:08 3026682                    /lib/x86_64-linux-gnu/ld-2.19.so
+ 7fd0a1314000-7fd0a1315000 rw-p 00023000 08:08 3026682                    /lib/x86_64-linux-gnu/ld-2.19.so
+ 7fd0a1315000-7fd0a1316000 rw-p 00000000 00:00 0
+ 7ffeac861000-7ffead060000 rw-p 00000000 00:00 0                          [stack]
+ 7ffead110000-7ffead112000 r-xp 00000000 00:00 0                          [vdso]
+ ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+ [NOTE]
+ You may have encountered a bug in the Ruby interpreter or extension libraries.
+ Bug reports are welcome.
+ For details: http://www.ruby-lang.org/bugreport.html
+ * 19276 cleanning up.
+ * (19276) Stopped listening on port 9293
+ * 19282 cleanning up.
+ * (19282) Stopped listening on port 9293
+ * 19298 cleanning up.
+ * (19298) Stopped listening on port 9293
+ * 19317 cleanning up.
+ * (19317) Stopped listening on port 9293
+ * 19309 cleanning up.
+ * (19309) Stopped listening on port 9293
+ * 19326 cleanning up.
+ * (19326) Stopped listening on port 9293
+ * 19273 cleanning up.
+ * (19273) Stopped listening on port 9293
+ dima4 disconnected
+    ---  Completed Shutdown  ---
+ Process exited

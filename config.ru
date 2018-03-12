@@ -43,12 +43,17 @@ end
 
 run app
 
+## Test for ERROR: (pub/sub) cluster message size error. Message ignored.
+## Also works for NoMethodError: undefined method `call' for ...
+
 # ws = new WebSocket("ws://localhost:3000/cable");
 # ws.onopen = function(e) {
 #     console.log("opened");
 #     ws.send(JSON.stringify({"command":"subscribe","identifier":"{\"channel\":\"chat\",\"id\":\"hui\"}"}));
 #     ws.send(JSON.stringify({command: "message", identifier: "{\"channel\":\"chat\",\"id\":\"hui\"}", data: "{\"message\":\"asht\",\"action\":\"speak\"}"}));
 # };
+
+## Simpiler test for NoMethodError: undefined method `call' for ...
 
 # ws = new WebSocket("ws://localhost:3000/cable");
 # ws.onopen = function(e) {
