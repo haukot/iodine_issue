@@ -2,10 +2,12 @@ require "sinatra"
 
 class App < Sinatra::Application
   get '/' do
+    # ERROR: (pub/sub) cluster message size error. Message ignored.
     'index'
   end
 
   get '/slim' do
+    # NoMethodError: undefined method `call' for ...
     slim 'index'
   end
 end
@@ -40,7 +42,6 @@ app = Rack::Builder.new do
 end
 
 run app
-
 
 # ws = new WebSocket("ws://localhost:3000/cable");
 # ws.onopen = function(e) {
